@@ -30,27 +30,44 @@
   }
 
   // === Latest ICC Highlights ===
-  // Edit this list to add/remove videos (easy weekly updates).
-  // Use ONLY the YouTube video id (the part after v= in the URL).
   const ICC_HIGHLIGHTS = [
-    { id: "dQw4w9WgXcQ", title: "Replace this with a real ICC highlight (example)", note: "Edit in script.js" },
-    { id: "M7lc1UVf-VE", title: "YouTube Player Demo (placeholder)", note: "Swap with ICC link" }
+    {
+      id: "AO0VjqBnExs",
+      title: "Latest ICC Highlight",
+      note: "Click to play"
+    }
   ];
 
   const listEl = document.querySelector("[data-video-list]");
   const modal = document.querySelector("[data-modal]");
   const frameEl = document.querySelector("[data-video-frame]");
 
+  function buildEmbedUrl(videoId) {
+    // Using youtube-nocookie is often more reliable with privacy/security headers
+    // mute=1 improves autoplay reliability across browsers
+    return `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1`;
+  }
+
   function openModal(videoId) {
     if (!modal || !frameEl) return;
+
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
 
-    // Autoplay + cleaner embeds
+    const watchUrl = `https://www.youtube.com/watch?v=${videoId}`;
+    const embedUrl = buildEmbedUrl(videoId);
+
     frameEl.innerHTML = `
+      <div class="video-actions" style="padding:12px; display:flex; justify-content:flex-end; gap:10px; background:rgba(0,0,0,0.25);">
+        <a href="${watchUrl}" target="_blank" rel="noopener"
+           style="color:#fff; font-weight:800; text-decoration:none; border:1px solid rgba(255,255,255,0.25); padding:10px 12px; border-radius:12px;">
+          Watch on YouTube →
+        </a>
+      </div>
       <iframe
-        src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1"
+        src="${embedUrl}"
         title="YouTube video player"
+        referrerpolicy="strict-origin-when-cross-origin"
         allow="autoplay; encrypted-media; picture-in-picture"
         allowfullscreen></iframe>
     `;
