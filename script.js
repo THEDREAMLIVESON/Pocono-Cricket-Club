@@ -30,6 +30,9 @@
   }
 
   // === Latest ICC Highlights ===
+  // Edit this list to add/remove videos (easy weekly updates).
+  // Use ONLY the YouTube video id (the part after v= in the URL).
+  // For youtu.be links, the ID is the part after the slash.
   const ICC_HIGHLIGHTS = [
     {
       id: "AO0VjqBnExs",
@@ -42,36 +45,20 @@
   const modal = document.querySelector("[data-modal]");
   const frameEl = document.querySelector("[data-video-frame]");
 
-  function buildEmbedUrl(videoId) {
-    // Using youtube-nocookie is often more reliable with privacy/security headers
-    // mute=1 improves autoplay reliability across browsers
-    return `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1`;
-  }
-
   function openModal(videoId) {
     if (!modal || !frameEl) return;
-
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
 
-    const watchUrl = `https://www.youtube.com/watch?v=${videoId}`;
-    const embedUrl = buildEmbedUrl(videoId);
-
+    // Autoplay + cleaner embeds
     frameEl.innerHTML = `
-      <div class="video-actions" style="padding:12px; display:flex; justify-content:flex-end; gap:10px; background:rgba(0,0,0,0.25);">
-        <a href="${watchUrl}" target="_blank" rel="noopener"
-           style="color:#fff; font-weight:800; text-decoration:none; border:1px solid rgba(255,255,255,0.25); padding:10px 12px; border-radius:12px;">
-          Watch on YouTube →
-        </a>
-      </div>
-      frameEl.innerHTML = `
-  <iframe
-    src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1"
-    title="YouTube video player"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allow="autoplay; encrypted-media; picture-in-picture"
-    allowfullscreen></iframe>
-`;
+      <iframe
+        src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1"
+        title="YouTube video player"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen></iframe>
+    `;
 
     document.body.style.overflow = "hidden";
   }
