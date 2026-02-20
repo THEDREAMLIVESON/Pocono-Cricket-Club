@@ -174,7 +174,7 @@ a{ color: inherit; }
   border: 0;
 }
 
-/* Google Form embed (added) */
+/* Google Form embed */
 .form-embed{
   padding: 18px;
   border-top: 1px solid var(--border);
@@ -214,6 +214,63 @@ a{ color: inherit; }
   color: rgba(15,23,42,0.84);
 }
 .footer-links a:hover{ text-decoration: underline; }
+
+/* =========================
+   Video Modal (FIXED)
+   Ensures iframe is visible
+   ========================= */
+.modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 5000; /* higher than header */
+}
+.modal.is-open{ display: block; }
+
+.modal-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.82);
+}
+
+.modal-panel{
+  position: relative;
+  width: min(1100px, calc(100% - 22px));
+  margin: 18px auto;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+
+.modal-close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.10);
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Force a real player height + fill */
+.video-frame{
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  background: #000;
+}
+.video-frame iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 
 /* Responsive */
 @media (max-width: 980px){
