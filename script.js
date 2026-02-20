@@ -40,6 +40,11 @@
       url: "https://www.youtube.com/watch?v=JFuzxrRb0DI",
       title: "Latest ICC Highlight",
       note: "Click to play"
+    },
+    {
+      url: "https://www.youtube.com/watch?v=JFuzxrRb0DI",
+      title: "Second ICC Highlight",
+      note: "Click to play"
     }
   ];
 
