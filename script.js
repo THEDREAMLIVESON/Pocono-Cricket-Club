@@ -64,13 +64,14 @@
           Watch on YouTube →
         </a>
       </div>
-      <iframe
-        src="${embedUrl}"
-        title="YouTube video player"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allow="autoplay; encrypted-media; picture-in-picture"
-        allowfullscreen></iframe>
-    `;
+      frameEl.innerHTML = `
+  <iframe
+    src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1"
+    title="YouTube video player"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allow="autoplay; encrypted-media; picture-in-picture"
+    allowfullscreen></iframe>
+`;
 
     document.body.style.overflow = "hidden";
   }
