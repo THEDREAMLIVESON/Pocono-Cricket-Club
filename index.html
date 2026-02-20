@@ -6,11 +6,13 @@
   <title>Pocono Cricket Club | Mt Pocono Area</title>
   <meta name="description" content="Pocono Cricket Club — a cricket community in the Poconos area. Register interest for Spring 2026." />
   <link rel="stylesheet" href="/styles.css" />
-<link rel="icon" href="/favicon.ico" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Favicons (keep if already added) -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 </head>
 
 <body>
@@ -42,80 +44,75 @@
   </header>
 
   <main id="main">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="pill">Adults (20+) • Recreational play + competitive matches</p>
+
+    <!-- NEW: Welcome Banner -->
+    <section class="welcome-banner" aria-label="Welcome">
+      <div class="container welcome-inner">
+        <img class="welcome-logo" src="/images/pocono-cricket-club-logo.png" alt="Pocono Cricket Club logo" />
+
+        <div class="welcome-copy">
           <h1>Build a cricket community in the Poconos.</h1>
-          <p class="lead">
-            A welcoming club centered on community vibes—open to all skill levels.
-            Be part of the founding season and get updates as we finalize fields and schedules.
+          <p class="welcome-sub">
+            Adults (20+) • Mt Pocono Area • Founding season Spring 2026
           </p>
 
-          <div class="cta-row">
+          <div class="welcome-actions">
             <a class="btn btn-primary" href="/join.html">Register Interest</a>
-            <a class="btn btn-secondary" href="/schedule.html">View Schedule (TBD)</a>
+            <a class="btn btn-secondary" href="#highlights">Watch highlights</a>
           </div>
 
-          <div class="callout">
-            <strong>First meeting:</strong> Spring 2026 (Mt Pocono area) •
-            <a href="/contact.html">Questions? Email us</a>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <div class="stat-grid">
-            <div class="stat">
-              <div class="stat-k">Season: Spring 2026</div>
-            </div>
-            <div class="stat">
-              <div class="stat-k">Area: Monroe, Wayne, and surrounding counties</div>
-            </div>
-            <div class="stat">
-              <div class="stat-k">Skill level: All are welcome</div>
-            </div>
-            <div class="stat">
-              <div class="stat-k">Updates: Weekly</div>
-            </div>
-          </div>
-          <div class="info-note">
-            <p><strong>We’ll publish:</strong> practice days, field address, and match schedule once confirmed.</p>
-            <p class="muted">Register interest so you’re first to know.</p>
+          <div class="welcome-mini">
+            <div class="mini-pill">Weekly updates</div>
+            <div class="mini-pill">All skill levels welcome</div>
+            <div class="mini-pill">Recreational + competitive matches</div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- NEW: Cleaner, less “essay-like” intro section -->
     <section class="section">
       <div class="container">
         <div class="section-head">
-          <h2>What you’ll get</h2>
-          <p class="muted">A lean, community-first club experience—easy to join, easy to stay informed.</p>
+          <h2>What this club is</h2>
+          <p class="muted">A lean, community-first cricket club — easy to join, easy to stay informed.</p>
         </div>
 
         <div class="cards-3">
           <div class="card">
-            <h3>Recreational play</h3>
-            <p>Friendly sessions designed for adults with busy schedules—bring your energy, we’ll bring the structure.</p>
+            <h3>Play</h3>
+            <p>Structured sessions for adults — friendly, consistent, and welcoming for all skill levels.</p>
           </div>
           <div class="card">
-            <h3>Competitive matches</h3>
-            <p>As membership grows, we’ll organize competitive fixtures with visiting teams and local rivals.</p>
+            <h3>Compete</h3>
+            <p>As membership grows, we’ll organize fixtures with visiting teams and local rivals.</p>
           </div>
           <div class="card">
             <h3>Community</h3>
-            <p>Cricket is the connector—community is the point. Meet new people and build something lasting together.</p>
+            <p>Bring West Indian cricket vibes together and build something lasting in the Poconos.</p>
+          </div>
+        </div>
+
+        <div class="cta-strip">
+          <div class="cta-strip-left">
+            <strong>First meeting:</strong> Spring 2026 (Mt Pocono area)
+            <span class="dot">•</span>
+            <span class="muted">Practice & schedule: TBD</span>
+          </div>
+          <div class="cta-strip-right">
+            <a class="btn btn-primary" href="/join.html">Register Interest</a>
+            <a class="btn btn-ghost" href="/contact.html">Email us</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Latest ICC Highlights + Updates -->
-    <section class="section section-alt">
+    <section id="highlights" class="section section-alt">
       <div class="container">
         <div class="section-head">
           <h2>Latest ICC highlights</h2>
-          <p class="muted">Here are your latest highlights.</p>
+          <p class="muted">Click a thumbnail to play full-screen.</p>
         </div>
 
         <div class="updates-grid">
@@ -123,10 +120,9 @@
             <div class="panel">
               <div class="panel-head">
                 <h3 class="panel-title">Highlights feed</h3>
-                <p class="panel-sub">Click a thumbnail to play full-screen.</p>
+                <p class="panel-sub">You can update these weekly in <code>script.js</code>.</p>
               </div>
 
-              <!-- JS renders the list here -->
               <div class="video-list" data-video-list></div>
 
               <div class="panel-foot">
@@ -139,11 +135,11 @@
             <div class="panel">
               <div class="panel-head">
                 <h3 class="panel-title">Club updates</h3>
-                <p class="panel-sub">Pin your latest announcements here.</p>
+                <p class="panel-sub">Short, pinned updates (no long paragraphs).</p>
               </div>
 
               <div class="bullet-box">
-                <ul>
+                <ul class="clean-list">
                   <li><strong>Spring 2026:</strong> launching founding season in the Mt Pocono area.</li>
                   <li><strong>Schedule:</strong> practice & match dates will be announced (TBD).</li>
                   <li><strong>Field:</strong> finalizing location and pitch setup details.</li>
@@ -158,7 +154,7 @@
               <div class="divider"></div>
 
               <p class="muted small">
-                Tip: you can replace these bullets weekly and keep the ICC highlights list as your “always fresh” content.
+                Tip: keep these as 2–3 bullets and refresh weekly. The highlights feed does the “daily content” job.
               </p>
             </div>
           </div>
@@ -167,6 +163,7 @@
       </div>
     </section>
 
+    <!-- Closing CTA -->
     <section class="section">
       <div class="container">
         <div class="section-head">
